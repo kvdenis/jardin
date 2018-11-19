@@ -13,6 +13,8 @@ class UserController extends Controller
 
         $user->username = $username;
 
+        $user->email = $username . '@m.ru';
+
         $user->setPassword($password);
 
         $user->generateAuthKey();
