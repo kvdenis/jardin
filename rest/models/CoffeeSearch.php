@@ -48,7 +48,7 @@ class CoffeeSearch extends Coffee
             'query' => $query,
             'sort'=> ['defaultOrder' => ['id' => SORT_ASC]],
             'pagination' => [
-                'pageSize' => Yii::$app->request->get('size', 30),
+                'pageSize' => 1000, 
             ],
         ]);
 
