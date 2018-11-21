@@ -53,10 +53,12 @@ return [
                 'GET v1/video' => 'v1/video/index',
 
                 'GET v1/coffee' => 'v1/coffee/index',
+                'GET v1/coffee/<id>' => 'v1/coffee/view',
 
                 'GET v1/radio' => 'v1/radio/index',
 
                 'GET v1/abc' => 'v1/abc/index',
+                'GET v1/abc/<id>' => 'v1/abc/view',
 
                 'GET v1/titles' => 'v1/titles/index',
 

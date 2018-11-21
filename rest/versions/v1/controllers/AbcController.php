@@ -1,6 +1,7 @@
 <?php
 namespace rest\versions\v1\controllers;
 
+use common\models\Abc;
 use rest\models\AbcSearch;
 use Yii;
 
@@ -23,5 +24,12 @@ class AbcController extends AbstractController
             'models' => $dataProvider->getModels(),
             'pagination' => $dataProvider->getPagination(),
         ];
+    }
+
+    public function actionView($id)
+    {
+        return Abc::find()
+            ->andWhere(['id' => $id])
+            ->one();
     }
 }

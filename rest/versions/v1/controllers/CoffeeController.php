@@ -1,6 +1,7 @@
 <?php
 namespace rest\versions\v1\controllers;
 
+use common\models\Coffee;
 use rest\models\CoffeeSearch;
 use Yii;
 
@@ -22,5 +23,12 @@ class CoffeeController extends AbstractController
             'models' => $dataProvider->getModels(),
             'pagination' => $dataProvider->getPagination(),
         ];
+    }
+
+    public function actionView($id)
+    {
+        return Coffee::find()
+            ->andWhere(['id' => $id])
+            ->one();
     }
 }
