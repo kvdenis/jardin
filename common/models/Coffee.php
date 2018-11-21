@@ -125,6 +125,10 @@ class Coffee extends \yii\db\ActiveRecord
                 return $this->getUrlImage();
             },
 
+            'tpeString' => function(){
+                return $this->tpe ? Coffee::getTpeItems()[$this->tpe] : null;
+            },
+
         ]);
     }
 
