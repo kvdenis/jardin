@@ -86,19 +86,10 @@ class Abc extends \yii\db\ActiveRecord
             },
 
             'childes' => function(){
-                return $this->childes;
+                return $this->getChildes()->orderBy(['title' => SORT_ASC])->all();
             },
 
         ]);
-    }
-
-    public function extraFields()
-    {
-        return [
-            'childes' => function(){
-                return $this->childes;
-            },
-        ];
     }
 
     public function getUrlImage() :string
