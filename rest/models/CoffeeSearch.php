@@ -47,6 +47,9 @@ class CoffeeSearch extends Coffee
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
             'sort'=> ['defaultOrder' => ['id' => SORT_ASC]],
+            'pagination' => [
+                'pageSize' => Yii::$app->request->get('size', 30),
+            ],
         ]);
 
         $this->load($params);
