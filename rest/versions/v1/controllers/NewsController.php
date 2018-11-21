@@ -16,4 +16,11 @@ class NewsController extends AbstractController
             ->limit(7)
             ->all();
     }
+
+    public function actionView($id)
+    {
+        return News::find()
+            ->andWhere(['id' => $id])
+            ->one();
+    }
 }

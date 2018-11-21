@@ -48,6 +48,7 @@ return [
                 ['class' => 'yii\rest\UrlRule', 'controller' => ['v1/post', 'v1/comment', 'v2/post']],
 
                 'GET v1/news' => 'v1/news/index',
+                'GET v1/news/<id>' => 'v1/news/view',
 
                 'GET v1/video' => 'v1/video/index',
 
