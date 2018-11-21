@@ -17,11 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php foreach ($models as $model) { ?>
 
-        <p>
-
-            <a style="width: 200px; text-align: left;" class="btn <?= $model->open==1 ? 'btn-success' : 'btn-default' ?>" href="<?= \yii\helpers\Url::to(['update', 'id' => $model->id]) ?>"><?= $model->id ?>. <?= $model->title ?></a>
-
-        </p>
+        <a class="btn coffee-item <?= $model->open==1 ? 'btn-success' : 'btn-default' ?>" href="<?= \yii\helpers\Url::to(['update', 'id' => $model->id]) ?>"><?= $model->title ?></a>
 
     <?php } ?>
 

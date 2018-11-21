@@ -32,9 +32,9 @@ use yii\widgets\ActiveForm;
 
             <?= $form->field($model, 'composition')->textarea(['rows' => 6]) ?>
 
-            <div class="row">
+            <div class="form-group">
 
-                <div class="col-lg-8">
+                <div class="">
 
                     <?=  $form->field($model, 'img')->widget(\kartik\file\FileInput::class, [
                         'options' => ['accept' => 'image/*'],
@@ -47,7 +47,7 @@ use yii\widgets\ActiveForm;
 
                 </div>
 
-                <div class="col-lg-4">
+                <div class="coffee-image">
 
                     <?php if ($model->image) { ?>
 

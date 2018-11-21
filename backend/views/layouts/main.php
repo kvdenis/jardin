@@ -42,16 +42,28 @@ AppAsset::register($this);
 
         $menuItems[] = ['label' => 'Войти', 'url' => ['/site/login']];
 
-    } else {
+    } else { ?>
+        <div id="menu_puncts">
+            <div class="menu_puncts_title">Разделы</div>
+            <ul>
+                <li class="menu-block">Главная</li>
+                <li url="views/slider.php" class="menu_punct"><a href="#">Слайдер на главной</a></li>
+                <li url="views/video.php" class="menu_punct"><a href="/video/index">Раздел с видео</a></li>
+                <li class="menu-block">Коллекция</li>
+                <li url="views/coffee_text.php" class="menu_punct"><a href="/coffee-text/update?id=1">Описание коллекций</a></li>
+                <li url="views/coffee.php" class="menu_punct"><a href="/coffee/root">Кофе</a></li>
+                <li class="menu-block">Впечатления</li>
+                <li url="views/radio.php" class="menu_punct"><a href="/radio/index">Музыка настоящего</a></li>
+                <li class="menu-block">Знания о кофе</li>
+                <li url="views/abc.php" class="menu_punct"><a href="/abc/root">Азбука вкуса</a></li>
+                <li class="menu-block">События</li>
+                <li url="views/news.php" class="menu_punct"><a href="/news/index">Список событий</a></li>
+                <li class="menu-block">Разделы</li>
+                <li url="views/titles.php" class="menu_punct"><a href="/titles/index">Управление разделами</a></li>
+            </ul>
+        </div>
 
-        $menuItems[] = ['label' => 'Список событий', 'url' => ['/news/index']];
-        $menuItems[] = ['label' => 'Раздел с видео', 'url' => ['/video/index']];
-        $menuItems[] = ['label' => 'Опис. коллекций', 'url' => ['/coffee-text/update', 'id' => 1]];
-        $menuItems[] = ['label' => 'Кофе', 'url' => ['/coffee/root']];
-        $menuItems[] = ['label' => 'Музыка настоящего', 'url' => ['/radio/index']];
-        $menuItems[] = ['label' => 'Азбука вкуса', 'url' => ['/abc/root']];
-        $menuItems[] = ['label' => 'Упр. разделами', 'url' => ['/titles/index']];
-
+        <?php
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
             . Html::submitButton(

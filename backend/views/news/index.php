@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel backend\models\NewsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Новости';
+$this->title = 'Список событий';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="news-index">
