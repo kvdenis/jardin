@@ -3,14 +3,12 @@ namespace rest\versions\v1\controllers;
 
 use rest\models\CoffeeSearch;
 use Yii;
-use yii\rest\Controller;
-
 
 /**
  * Class CoffeeController
  * @package rest\versions\v1\controllers
  */
-class CoffeeController extends Controller
+class CoffeeController extends AbstractController
 {
     public function actionIndex()
     {

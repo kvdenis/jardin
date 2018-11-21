@@ -2,14 +2,12 @@
 namespace rest\versions\v1\controllers;
 
 use common\models\News;
-use yii\rest\Controller;
-
 
 /**
  * Class NewsController
  * @package rest\versions\v1\controllers
  */
-class NewsController extends Controller
+class NewsController extends AbstractController
 {
     public function actionIndex()
     {

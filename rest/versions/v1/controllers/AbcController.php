@@ -3,14 +3,13 @@ namespace rest\versions\v1\controllers;
 
 use rest\models\AbcSearch;
 use Yii;
-use yii\rest\Controller;
 
 
 /**
  * Class AbcController
  * @package rest\versions\v1\controllers
  */
-class AbcController extends Controller
+class AbcController extends AbstractController
 {
     public function actionIndex()
     {
