@@ -20,9 +20,9 @@ use yii\widgets\ActiveForm;
 
     <?=  $form->field($model, 'mp4')->fileInput(['accept' => '*']); ?>
 
-    <div class="row">
+    <div class="form-group">
 
-        <div class="col-lg-4">
+        <div class="">
 
             <?=  $form->field($model, 'img')->widget(\kartik\file\FileInput::class, [
                 'options' => ['accept' => 'image/*'],
@@ -35,7 +35,7 @@ use yii\widgets\ActiveForm;
 
         </div>
 
-        <div class="col-lg-8">
+        <div class="video-image">
 
             <?php if ($model->image) { ?>
 
@@ -48,7 +48,7 @@ use yii\widgets\ActiveForm;
     </div>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

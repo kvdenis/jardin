@@ -8,7 +8,7 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="news-form col-lg-8">
+<div class="news-form">
 
     <?php $form = ActiveForm::begin([
         'options' => ['enctype'=>'multipart/form-data']
@@ -20,9 +20,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'info')->textarea(['rows' => 6]) ?>
 
-    <div class="row">
+    <div class="form-group">
 
-        <div class="col-lg-6">
+        <div class="">
 
             <?=  $form->field($model, 'img')->widget(\kartik\file\FileInput::class, [
                 'options' => ['accept' => 'image/*'],
@@ -30,7 +30,7 @@ use yii\widgets\ActiveForm;
 
         </div>
 
-        <div class="col-lg-6">
+        <div class="news-image">
 
             <?php if ($model->image) { ?>
             

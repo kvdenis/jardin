@@ -23,7 +23,7 @@ $this->params['breadcrumbs'][] = 'Редактирование';
 
     <div class="row">
 
-        <div class="col-lg-6">
+        <div class="col-lg-9">
 
             <?= $this->render('_form', [
                 'model' => $model,
@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = 'Редактирование';
 
         </div>
 
-        <div class="col-lg-6">
+        <div class="col-lg-3">
 
             <?php foreach ($model->coffees as $child) { ?>
 
