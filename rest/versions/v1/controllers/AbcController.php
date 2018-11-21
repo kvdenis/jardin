@@ -20,8 +20,6 @@ class AbcController extends AbstractController
 
         $dataProvider = $searchModel->search([]);
 
-        $dataProvider->query->limit(1000);
-
         return $dataProvider->getModels();
     }
 

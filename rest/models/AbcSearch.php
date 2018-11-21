@@ -47,6 +47,10 @@ class AbcSearch extends Abc
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'sort'=> ['defaultOrder' => ['title' => SORT_ASC]],
+            'pagination' => [
+                'pageSize' => 1000,
+            ],
         ]);
 
         $this->load($params);

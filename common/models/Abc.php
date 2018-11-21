@@ -88,6 +88,15 @@ class Abc extends \yii\db\ActiveRecord
         ]);
     }
 
+    public function extraFields()
+    {
+        return [
+            'childes' => function(){
+                return $this->childes;
+            },
+        ];
+    }
+
     public function getUrlImage() :string
     {
         return Yii::$app->params['urlUpload'] . '/upload/' . $this->image;
