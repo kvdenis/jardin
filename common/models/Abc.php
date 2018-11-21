@@ -85,6 +85,10 @@ class Abc extends \yii\db\ActiveRecord
                 return $this->image ? $this->getUrlImage() : null;
             },
 
+            'childes' => function(){
+                return $this->childes;
+            },
+
         ]);
     }
 
