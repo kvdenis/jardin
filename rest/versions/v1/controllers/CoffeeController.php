@@ -19,7 +19,6 @@ class CoffeeController extends AbstractController
 
         $dataProvider = $searchModel->search([]);
 
-        $dataProvider->query->limit(1);
 
         return $dataProvider->getModels();
     }
