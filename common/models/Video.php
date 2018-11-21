@@ -38,15 +38,10 @@ class Video extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'info'], 'required'],
+            [['title'], 'required'],
             [['info'], 'string'],
             [['title', 'url', 'image'], 'string', 'max' => 255],
-
-            ['title', function(){
-
-                $this->title = Html::encode($this->title);
-            }],
-
+            
             ['img', 'file', 'extensions'=>'jpg, gif, png'],
 
             ['mp4', 'file', 'extensions'=>'mp4', 'checkExtensionByMimeType' => false],
