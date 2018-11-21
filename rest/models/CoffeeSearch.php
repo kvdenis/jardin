@@ -56,6 +56,8 @@ class CoffeeSearch extends Coffee
             return $dataProvider;
         }
 
+
+
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
