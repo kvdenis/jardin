@@ -39,7 +39,7 @@ class Abc extends \yii\db\ActiveRecord
             [['parentid', 'title'], 'required'],
             [['parentid'], 'integer'],
             [['info'], 'string'],
-            [['title', 'image'], 'string', 'max' => 255],
+            [['title'], 'string', 'max' => 255],
         ];
     }
 

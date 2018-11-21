@@ -39,9 +39,11 @@ class Video extends \yii\db\ActiveRecord
     {
         return [
             [['title'], 'required'],
-            [['info'], 'string'],
             [['title', 'url', 'image'], 'string', 'max' => 255],
-            
+
+            ['info', 'string'],
+            ['info', 'default', 'value' => null],
+
             ['img', 'file', 'extensions'=>'jpg, gif, png'],
 
             ['mp4', 'file', 'extensions'=>'mp4', 'checkExtensionByMimeType' => false],
