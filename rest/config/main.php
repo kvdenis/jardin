@@ -59,6 +59,8 @@ return [
 
                 'GET v1/titles' => 'v1/titles/index',
 
+                'GET v1/slider' => 'v1/slider/index',
+
                 'GET v1/coffee-text' => 'v1/coffee-text/index',
             ],
         ],
