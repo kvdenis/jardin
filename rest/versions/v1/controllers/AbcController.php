@@ -2,6 +2,8 @@
 namespace rest\versions\v1\controllers;
 
 use common\models\Abc;
+use rest\models\AbcSearch;
+use Yii;
 
 
 /**
@@ -12,9 +14,15 @@ class AbcController extends AbstractController
 {
     public function actionIndex()
     {
-        return Abc::find()
-            ->orderBy(['title' => SORT_ASC])
-            ->all();
+        $searchModel = new AbcSearch();
+
+        $searchModel->load(Yii::$app->request->queryParams, '');
+
+        $dataProvider = $searchModel->search([]);
+
+        $dataProvider->query->limit(1000);
+
+        return $dataProvider->getModels();
     }
 
     public function actionView($id)

@@ -2,6 +2,7 @@
 namespace rest\versions\v1\controllers;
 
 use common\models\Coffee;
+use rest\models\CoffeeSearch;
 use Yii;
 
 /**
@@ -12,9 +13,15 @@ class CoffeeController extends AbstractController
 {
     public function actionIndex()
     {
-        return Coffee::find()
-            ->orderBy(['id' => SORT_ASC])
-            ->all();
+        $searchModel = new CoffeeSearch();
+
+        $searchModel->load(Yii::$app->request->queryParams, '');
+
+        $dataProvider = $searchModel->search([]);
+
+        $dataProvider->query->limit(1000);
+
+        return $dataProvider->getModels();
     }
 
     public function actionView($id)
