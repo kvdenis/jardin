@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use yii\web\UploadedFile;
 
 /**
  * This is the model class for table "slider".
@@ -14,6 +15,9 @@ use Yii;
  */
 class Slider extends \yii\db\ActiveRecord
 {
+    /** @var UploadedFile */
+    public $img;
+
     /**
      * {@inheritdoc}
      */
@@ -28,8 +32,8 @@ class Slider extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'link', 'image'], 'required'],
-            [['title', 'link', 'image'], 'string', 'max' => 255],
+            [['title', 'link'], 'required'],
+            [['title', 'link'], 'string', 'max' => 255],
         ];
     }
 
@@ -40,10 +44,46 @@ class Slider extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'title' => 'Title',
-            'link' => 'Link',
-            'image' => 'Image',
+            'title' => 'Название',
+            'link' => 'Ссылка',
+            'image' => 'Фото',
+            'img' => 'Фото',
         ];
+    }
+
+    public function attributeHints()
+    {
+        return [
+            'image' => '1136x353',
+        ];
+    }
+
+    public function beforeSave($insert) :bool
+    {
+        if ($this->img) {
+
+            $this->image = md5($this->img->baseName . '_' . time()) . '.' . $this->img->extension;
+
+            $this->img->saveAs(Yii::$aliases['@frontend'] . '/web/upload/' . $this->image);
+        }
+
+        return parent::beforeSave($insert);
+    }
+
+    public function fields()
+    {
+        return array_merge(parent::fields(), [
+
+            'urlImage' => function(){
+                return $this->getUrlImage();
+            },
+
+        ]);
+    }
+
+    public function getUrlImage() :string
+    {
+        return Yii::$app->params['urlUpload'] . '/upload/' . $this->image;
     }
 
     /**

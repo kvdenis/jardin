@@ -22,14 +22,7 @@ use yii\widgets\ActiveForm;
 
             <div class="col-lg-8">
 
-                <?=  $form->field($model, 'img')->widget(\kartik\file\FileInput::class, [
-                    'options' => ['accept' => 'image/*'],
-                    'showMessage' => false,
-                    'resizeImages' => true,
-                    'pluginOptions' => [
-                        'theme' => 'explorer',
-                    ],
-                ]); ?>
+                <?=  $form->field($model, 'img')->fileInput(['accept' => 'image/*']); ?>
 
             </div>
 

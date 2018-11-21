@@ -47,13 +47,13 @@ AppAsset::register($this);
             <div class="menu_puncts_title">Разделы</div>
             <ul>
                 <li class="menu-block">Главная</li>
-                <li url="views/slider.php" class="menu_punct"><a href="#">Слайдер на главной</a></li>
-                <li url="views/video.php" class="menu_punct"><a href="/video/index">Раздел с видео</a></li>
+                <li url="views/slider.php" class="menu_punct"><a href="<?= \yii\helpers\Url::to(['/slider/index']) ?>">Слайдер на главной</a></li>
+                <li url="views/video.php" class="menu_punct"><a href="<?= \yii\helpers\Url::to(['/video/index']) ?>">Раздел с видео</a></li>
                 <li class="menu-block">Коллекция</li>
                 <li url="views/coffee_text.php" class="menu_punct"><a href="/coffee-text/update?id=1">Описание коллекций</a></li>
-                <li url="views/coffee.php" class="menu_punct"><a href="/coffee/root">Кофе</a></li>
+                <li url="views/coffee.php" class="menu_punct"><a href="<?= \yii\helpers\Url::to(['/coffee/root']) ?>">Кофе</a></li>
                 <li class="menu-block">Впечатления</li>
-                <li url="views/radio.php" class="menu_punct"><a href="/radio/index">Музыка настоящего</a></li>
+                <li url="views/radio.php" class="menu_punct"><a href="<?= \yii\helpers\Url::to(['/radio/index']) ?>">Музыка настоящего</a></li>
                 <li class="menu-block">Знания о кофе</li>
                 <li url="views/abc.php" class="menu_punct"><a href="/abc/root">Азбука вкуса</a></li>
                 <li class="menu-block">События</li>

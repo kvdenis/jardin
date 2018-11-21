@@ -24,9 +24,7 @@ use yii\widgets\ActiveForm;
 
         <div class="">
 
-            <?=  $form->field($model, 'img')->widget(\kartik\file\FileInput::class, [
-                'options' => ['accept' => 'image/*'],
-            ]); ?>
+            <?=  $form->field($model, 'img')->fileInput(['accept' => 'image/*']); ?>
 
         </div>
 

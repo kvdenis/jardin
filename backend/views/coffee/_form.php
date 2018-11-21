@@ -36,14 +36,7 @@ use yii\widgets\ActiveForm;
 
                 <div class="">
 
-                    <?=  $form->field($model, 'img')->widget(\kartik\file\FileInput::class, [
-                        'options' => ['accept' => 'image/*'],
-                        'showMessage' => false,
-                        'resizeImages' => true,
-                        'pluginOptions' => [
-                            'theme' => 'explorer',
-                        ],
-                    ]); ?>
+                    <?=  $form->field($model, 'img')->fileInput(['accept' => 'image/*']); ?>
 
                 </div>
 
@@ -96,14 +89,7 @@ use yii\widgets\ActiveForm;
 
             <div class="col-lg-4">
 
-                <?=  $form->field($model, 'img')->widget(\kartik\file\FileInput::class, [
-                    'options' => ['accept' => 'image/*'],
-                    'showMessage' => false,
-                    'resizeImages' => true,
-                    'pluginOptions' => [
-                        'theme' => 'explorer',
-                    ],
-                ]); ?>
+                <?=  $form->field($model, 'img')->fileInput(['accept' => 'image/*']); ?>
 
             </div>
 
