@@ -65,6 +65,9 @@ return [
                 'GET v1/slider' => 'v1/slider/index',
 
                 'GET v1/coffee-text' => 'v1/coffee-text/index',
+
+                'POST v1/log' => 'v1/log/create',
+                'GET v1/log' => 'v1/log/create',
             ],
         ],
     ],
