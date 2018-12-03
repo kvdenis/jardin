@@ -364,3 +364,7 @@ a {
 .coffee-form .file-input.file-input-ajax-new{
     width: calc(100% - 120px);
 }
+input[type='file']{
+    padding: 5px 0;
+    min-width: 300px;
+}
