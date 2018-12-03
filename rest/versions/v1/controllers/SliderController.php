@@ -12,6 +12,6 @@ class SliderController extends AbstractController
 {
     public function actionIndex()
     {
-        return Slider::find()->all();
+        return Slider::find()->active()->all();
     }
 }

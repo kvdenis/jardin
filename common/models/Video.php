@@ -3,8 +3,6 @@
 namespace common\models;
 
 use Yii;
-use yii\helpers\Html;
-use yii\helpers\Url;
 use yii\web\UploadedFile;
 
 /**
@@ -15,6 +13,7 @@ use yii\web\UploadedFile;
  * @property string $info
  * @property string $url
  * @property string $image
+ * @property integer $open
  */
 class Video extends \yii\db\ActiveRecord
 {

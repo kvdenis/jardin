@@ -12,6 +12,7 @@ use yii\web\UploadedFile;
  * @property string $title
  * @property string $link
  * @property string $image
+ * @property integer $open
  */
 class Slider extends \yii\db\ActiveRecord
 {

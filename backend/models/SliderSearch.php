@@ -41,7 +41,7 @@ class SliderSearch extends Slider
      */
     public function search($params)
     {
-        $query = Slider::find();
+        $query = Slider::find()->active();
 
         // add conditions that should always apply here
 
@@ -53,7 +53,7 @@ class SliderSearch extends Slider
 
         if (!$this->validate()) {
             // uncomment the following line if you do not want to return any records when validation fails
-            // $query->where('0=1');
+            $query->where('0=1');
             return $dataProvider;
         }
 

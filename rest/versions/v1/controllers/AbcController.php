@@ -26,6 +26,7 @@ class AbcController extends AbstractController
     public function actionView($id)
     {
         return Abc::find()
+            ->active()
             ->andWhere(['id' => $id])
             ->one();
     }

@@ -11,6 +11,7 @@ use yii\web\UploadedFile;
  * @property int $id
  * @property string $title
  * @property string $url
+ * @property integer $open
  */
 class Radio extends \yii\db\ActiveRecord
 {

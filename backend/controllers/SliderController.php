@@ -117,7 +117,11 @@ class SliderController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+
+        $model->open = false;
+
+        $model->save(false, ['open']);
 
         return $this->redirect(['index']);
     }
@@ -131,7 +135,13 @@ class SliderController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = Slider::findOne($id)) !== null) {
+        $model = Slider::find()
+            ->andWhere(['id' => $id])
+            ->active()
+            ->one();
+
+        if ($model) {
+
             return $model;
         }
 

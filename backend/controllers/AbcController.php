@@ -52,6 +52,7 @@ class AbcController extends Controller
     public function actionRoot()
     {
         $models = Abc::find()
+            ->active()
             ->andWhere(['parentid' => 0])
             ->orderBy(['title' => SORT_ASC])
             ->all();
@@ -141,11 +142,14 @@ class AbcController extends Controller
     {
         $model = $this->findModel($id);
 
-        $parenId = $model->parentid;
+        $model->open = false;
 
-        $model->delete();
+        $model->save(false, ['open']);
 
-        return $parenId ? $this->redirect(['update', 'id' => $parenId]) : $this->redirect(['root']);
+
+        return $model->parentid ?
+            $this->redirect(['update', 'id' => $model->parentid]) :
+            $this->redirect(['root']);
     }
 
     /**
@@ -157,7 +161,13 @@ class AbcController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = Abc::findOne($id)) !== null) {
+        $model = Abc::find()
+            ->andWhere(['id' => $id])
+            ->active()
+            ->one();
+
+        if ($model) {
+
             return $model;
         }
 

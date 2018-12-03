@@ -41,7 +41,7 @@ class AbcSearch extends Abc
      */
     public function search($params)
     {
-        $query = Abc::find();
+        $query = Abc::find()->active();
 
         // add conditions that should always apply here
 

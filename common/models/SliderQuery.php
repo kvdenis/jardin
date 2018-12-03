@@ -9,11 +9,13 @@ namespace common\models;
  */
 class SliderQuery extends \yii\db\ActiveQuery
 {
-    /*public function active()
+    /**
+     * @return SliderQuery
+     */
+    public function active() :SliderQuery
     {
-        return $this->andWhere('[[status]]=1');
-    }*/
-
+        return $this->andWhere(['open' => true]);
+    }
     /**
      * {@inheritdoc}
      * @return Slider[]|array

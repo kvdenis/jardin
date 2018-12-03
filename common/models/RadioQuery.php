@@ -9,10 +9,13 @@ namespace common\models;
  */
 class RadioQuery extends \yii\db\ActiveQuery
 {
-    /*public function active()
+    /**
+     * @return RadioQuery
+     */
+    public function active() :RadioQuery
     {
-        return $this->andWhere('[[status]]=1');
-    }*/
+        return $this->andWhere(['open' => true]);
+    }
 
     /**
      * {@inheritdoc}

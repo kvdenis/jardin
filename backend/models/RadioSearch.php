@@ -41,7 +41,7 @@ class RadioSearch extends Radio
      */
     public function search($params)
     {
-        $query = Radio::find();
+        $query = Radio::find()->active();
 
         // add conditions that should always apply here
 
@@ -53,7 +53,7 @@ class RadioSearch extends Radio
 
         if (!$this->validate()) {
             // uncomment the following line if you do not want to return any records when validation fails
-            // $query->where('0=1');
+            $query->where('0=1');
             return $dataProvider;
         }
 

@@ -9,10 +9,13 @@ namespace common\models;
  */
 class VideoQuery extends \yii\db\ActiveQuery
 {
-    /*public function active()
+    /**
+     * @return VideoQuery
+     */
+    public function active() :VideoQuery
     {
-        return $this->andWhere('[[status]]=1');
-    }*/
+        return $this->andWhere(['open' => true]);
+    }
 
     /**
      * {@inheritdoc}

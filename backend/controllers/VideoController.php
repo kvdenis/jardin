@@ -121,7 +121,11 @@ class VideoController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+
+        $model->open = false;
+
+        $model->save(false, ['open']);
 
         return $this->redirect(['index']);
     }
@@ -135,7 +139,13 @@ class VideoController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = Video::findOne($id)) !== null) {
+        $model = Video::find()
+            ->andWhere(['id' => $id])
+            ->active()
+            ->one();
+
+        if ($model) {
+
             return $model;
         }
 

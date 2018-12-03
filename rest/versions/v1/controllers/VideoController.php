@@ -11,6 +11,7 @@ class VideoController extends AbstractController
     public function actionIndex()
     {
         return Video::find()
+            ->active()
             ->orderBy(['id' => SORT_DESC])
             ->all();
     }

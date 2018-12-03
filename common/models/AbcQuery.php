@@ -9,10 +9,13 @@ namespace common\models;
  */
 class AbcQuery extends \yii\db\ActiveQuery
 {
-    /*public function active()
+    /**
+     * @return AbcQuery
+     */
+    public function active() :AbcQuery
     {
-        return $this->andWhere('[[status]]=1');
-    }*/
+        return $this->andWhere(['open' => true]);
+    }
 
     /**
      * {@inheritdoc}

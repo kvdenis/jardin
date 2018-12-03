@@ -13,6 +13,7 @@ use yii\web\UploadedFile;
  * @property string $title
  * @property string $info
  * @property string $image
+ * @property integer $open
  *
  * @property Abc $parent
  * @property Abc[] $childes
