@@ -18,7 +18,7 @@ use yii\web\UploadedFile;
  * @property Abc $parent
  * @property Abc[] $childes
  */
-class Abc extends \yii\db\ActiveRecord
+class Abc extends \common\db\ActiveRecord
 {
     /** @var UploadedFile */
     public $img;

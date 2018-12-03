@@ -11,7 +11,7 @@ use Yii;
  * @property string $title
  * @property int $open
  */
-class Titles extends \yii\db\ActiveRecord
+class Titles extends \common\db\ActiveRecord
 {
     /**
      * {@inheritdoc}

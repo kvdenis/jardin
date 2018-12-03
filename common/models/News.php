@@ -16,7 +16,7 @@ use yii\web\UploadedFile;
  * @property string $dte
  * @property integer $open
  */
-class News extends \yii\db\ActiveRecord
+class News extends \common\db\ActiveRecord
 {
     /** @var UploadedFile */
     public $img;

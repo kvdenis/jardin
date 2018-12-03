@@ -15,7 +15,7 @@ use yii\web\UploadedFile;
  * @property string $image
  * @property integer $open
  */
-class Video extends \yii\db\ActiveRecord
+class Video extends \common\db\ActiveRecord
 {
     /** @var UploadedFile */
     public $mp4;

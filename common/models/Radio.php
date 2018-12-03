@@ -13,7 +13,7 @@ use yii\web\UploadedFile;
  * @property string $url
  * @property integer $open
  */
-class Radio extends \yii\db\ActiveRecord
+class Radio extends \common\db\ActiveRecord
 {
     /** @var UploadedFile */
     public $mp3;

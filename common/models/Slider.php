@@ -14,7 +14,7 @@ use yii\web\UploadedFile;
  * @property string $image
  * @property integer $open
  */
-class Slider extends \yii\db\ActiveRecord
+class Slider extends \common\db\ActiveRecord
 {
     /** @var UploadedFile */
     public $img;

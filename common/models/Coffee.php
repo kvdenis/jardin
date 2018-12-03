@@ -30,7 +30,7 @@ use yii\web\UploadedFile;
  * @property Coffee $parent
  * @property Coffee[] $coffees
  */
-class Coffee extends \yii\db\ActiveRecord
+class Coffee extends \common\db\ActiveRecord
 {
     /** @var UploadedFile */
     public $img;

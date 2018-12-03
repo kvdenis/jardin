@@ -11,7 +11,7 @@ use Yii;
  * @property string $name
  * @property string $password
  */
-class Password extends \yii\db\ActiveRecord
+class Password extends \common\db\ActiveRecord
 {
     /**
      * {@inheritdoc}

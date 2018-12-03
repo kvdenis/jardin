@@ -9,7 +9,7 @@ namespace common\models;
  * @property string $info1
  * @property string $info2
  */
-class CoffeeText extends \yii\db\ActiveRecord
+class CoffeeText extends \common\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
