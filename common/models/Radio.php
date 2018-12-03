@@ -57,7 +57,7 @@ class Radio extends \yii\db\ActiveRecord
 
             $this->url = md5($this->mp3->baseName . '_' . time()) . '.' . $this->mp3->extension;
 
-            $this->mp3->saveAs(Yii::$aliases['@frontend'] . '/web/upload/' . $this->url);
+            $this->mp3->saveAs(Yii::$aliases['@frontend'] . '/web/upload/audio/' . $this->url);
         }
 
         return parent::beforeSave($insert);

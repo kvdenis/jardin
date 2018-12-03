@@ -71,7 +71,7 @@ class Abc extends \yii\db\ActiveRecord
 
             $this->image = md5($this->img->baseName . '_' . time()) . '.' . $this->img->extension;
 
-            $this->img->saveAs(Yii::$aliases['@frontend'] . '/web/upload/' . $this->image);
+            $this->img->saveAs(Yii::$aliases['@frontend'] . '/web/upload/image/' . $this->image);
         }
 
         return parent::beforeSave($insert);

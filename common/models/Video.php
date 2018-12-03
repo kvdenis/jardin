@@ -79,14 +79,14 @@ class Video extends \yii\db\ActiveRecord
 
             $this->image = md5($this->img->baseName . '_' . time()) . '.' . $this->img->extension;
 
-            $this->img->saveAs(Yii::$aliases['@frontend'] . '/web/upload/' . $this->image);
+            $this->img->saveAs(Yii::$aliases['@frontend'] . '/web/upload/image/' . $this->image);
         }
 
         if ($this->mp4) {
 
             $this->url = md5($this->mp4->baseName . '_' . time()) . '.' . $this->mp4->extension;
 
-            $this->mp4->saveAs(Yii::$aliases['@frontend'] . '/web/upload/' . $this->url);
+            $this->mp4->saveAs(Yii::$aliases['@frontend'] . '/web/upload/video/' . $this->url);
         }
 
         return parent::beforeSave($insert);
