@@ -14,6 +14,7 @@ use yii\web\UploadedFile;
  * @property string $info
  * @property string $image
  * @property string $dte
+ * @property integer $open
  */
 class News extends \yii\db\ActiveRecord
 {

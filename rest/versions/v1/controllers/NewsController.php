@@ -12,6 +12,7 @@ class NewsController extends AbstractController
     public function actionIndex()
     {
         return News::find()
+            ->active()
             ->orderBy(['id' => SORT_DESC])
             ->limit(7)
             ->all();
@@ -20,6 +21,7 @@ class NewsController extends AbstractController
     public function actionView($id)
     {
         return News::find()
+            ->active()
             ->andWhere(['id' => $id])
             ->one();
     }

@@ -9,10 +9,13 @@ namespace common\models;
  */
 class NewsQuery extends \yii\db\ActiveQuery
 {
-    /*public function active()
+    /**
+     * @return NewsQuery
+     */
+    public function active() :NewsQuery
     {
-        return $this->andWhere('[[status]]=1');
-    }*/
+        return $this->andWhere(['open' => true]);
+    }
 
     /**
      * {@inheritdoc}

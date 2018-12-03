@@ -22,7 +22,7 @@ class NewsController extends Controller
     {
         return [
             'verbs' => [
-                'class' => VerbFilter::className(),
+                'class' => VerbFilter::class,
                 'actions' => [
                     'delete' => ['POST'],
                 ],
@@ -119,7 +119,11 @@ class NewsController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+
+        $model->open = false;
+
+        $model->save(false, ['open']);
 
         return $this->redirect(['index']);
     }
