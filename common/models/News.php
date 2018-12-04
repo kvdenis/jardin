@@ -62,6 +62,7 @@ class News extends \common\db\ActiveRecord
             'image' => 'Фото',
             'img' => 'Фото',
             'dte' => 'Дата',
+            'open' => 'Показать',
         ];
     }
 
