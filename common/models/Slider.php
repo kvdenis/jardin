@@ -35,6 +35,8 @@ class Slider extends \common\db\ActiveRecord
         return [
             [['title', 'link'], 'required'],
             [['title', 'link'], 'string', 'max' => 255],
+
+            ['open', 'required'],
         ];
     }
 
@@ -49,6 +51,7 @@ class Slider extends \common\db\ActiveRecord
             'link' => 'Ссылка',
             'image' => 'Фото',
             'img' => 'Фото',
+            'open' => 'Показать',
         ];
     }
 

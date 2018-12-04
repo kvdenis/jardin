@@ -25,11 +25,6 @@ use yii\widgets\ActiveForm;
                 'prompt' => '',
             ]) ?>
 
-            <?= $form->field($model, 'open')->dropDownList(['1' => 'Доступно', '2' => 'Закрыто'], [
-                'prompt' => '',
-            ]) ?>
-
-
             <?= $form->field($model, 'composition')->textarea(['rows' => 6]) ?>
 
             <div class="form-group">
@@ -106,6 +101,19 @@ use yii\widgets\ActiveForm;
         </div>
 
     <?php } ?>
+
+    <div class="row">
+
+        <div class="col-lg-3">
+
+            <?= $form->field($model, 'open')->dropDownList([\common\models\Coffee::STATUS_ACTIVE => 'Доступно', '2' => 'Закрыто'], [
+                'prompt' => '',
+            ]) ?>
+
+        </div>
+
+    </div>
+
 
     <div class="form-group">
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>

@@ -38,6 +38,18 @@ use yii\widgets\ActiveForm;
 
     </div>
 
+    <div class="row">
+
+        <div class="col-lg-3">
+
+            <?= $form->field($model, 'open')->dropDownList([\common\models\Coffee::STATUS_ACTIVE => 'Доступно', '2' => 'Закрыто'], [
+                'prompt' => '',
+            ]) ?>
+
+        </div>
+
+    </div>
+
 
     <div class="form-group">
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>

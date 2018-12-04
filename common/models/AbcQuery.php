@@ -14,7 +14,7 @@ class AbcQuery extends \yii\db\ActiveQuery
      */
     public function active() :AbcQuery
     {
-        return $this->andWhere(['open' => true]);
+        return $this->andWhere(['open' => Abc::STATUS_ACTIVE]);
     }
 
     /**

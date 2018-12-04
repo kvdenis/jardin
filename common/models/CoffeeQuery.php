@@ -9,10 +9,13 @@ namespace common\models;
  */
 class CoffeeQuery extends \yii\db\ActiveQuery
 {
-    /*public function active()
+    /**
+     * @return CoffeeQuery
+     */
+    public function active() :CoffeeQuery
     {
-        return $this->andWhere('[[status]]=1');
-    }*/
+        return $this->andWhere(['open' => Coffee::STATUS_ACTIVE]);
+    }
 
     /**
      * {@inheritdoc}

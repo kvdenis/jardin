@@ -32,6 +32,8 @@ use yii\web\UploadedFile;
  */
 class Coffee extends \common\db\ActiveRecord
 {
+    const STATUS_ACTIVE = 1;
+
     /** @var UploadedFile */
     public $img;
 
@@ -58,7 +60,7 @@ class Coffee extends \common\db\ActiveRecord
     public function rules()
     {
         return [
-            [['parentid', 'title', 'info', 'rating', 'composition', 'open'], 'required', 'when' => function(){
+            [['parentid', 'title', 'info', 'rating', 'composition'], 'required', 'when' => function(){
                 return $this->parentid==0;
             }],
             [['pack', 'tpe'], 'required', 'when' => function(){
@@ -67,6 +69,9 @@ class Coffee extends \common\db\ActiveRecord
             [['parentid', 'rating', 'tpe', 'line', 'open'], 'integer'],
             [['info', 'composition'], 'string'],
             [['title', 'image', 'pack', 'shop1', 'shop2', 'shop3', 'shop4', 'shop5', 'shop6', 'shop7'], 'string', 'max' => 255],
+
+            ['open', 'required'],
+            ['open', 'boolean'],
         ];
     }
 

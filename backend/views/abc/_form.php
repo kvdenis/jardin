@@ -44,6 +44,18 @@ use yii\widgets\ActiveForm;
 
     <?php } ?>
 
+    <div class="row">
+
+        <div class="col-lg-4">
+
+            <?= $form->field($model, 'open')->dropDownList([\common\models\Abc::STATUS_ACTIVE => 'Доступно', '2' => 'Закрыто'], [
+                'prompt' => '',
+            ]) ?>
+
+        </div>
+
+    </div>
+
     <div class="form-group">
 
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>

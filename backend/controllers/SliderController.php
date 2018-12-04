@@ -137,7 +137,6 @@ class SliderController extends Controller
     {
         $model = Slider::find()
             ->andWhere(['id' => $id])
-            ->active()
             ->one();
 
         if ($model) {

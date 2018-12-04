@@ -40,7 +40,7 @@ class CoffeeSearch extends Coffee
      */
     public function search($params)
     {
-        $query = Coffee::find();
+        $query = Coffee::find()->active();
 
         // add conditions that should always apply here
 
@@ -69,7 +69,6 @@ class CoffeeSearch extends Coffee
             'rating' => $this->rating,
             'tpe' => $this->tpe,
             'line' => $this->line,
-            'open' => $this->open,
         ]);
 
         $query->andFilterWhere(['like', 'title', $this->title])

@@ -20,6 +20,8 @@ use yii\web\UploadedFile;
  */
 class Abc extends \common\db\ActiveRecord
 {
+    const STATUS_ACTIVE = 1;
+
     /** @var UploadedFile */
     public $img;
 
@@ -41,6 +43,8 @@ class Abc extends \common\db\ActiveRecord
             [['parentid'], 'integer'],
             [['info'], 'string'],
             [['title'], 'string', 'max' => 255],
+
+            ['open', 'required'],
         ];
     }
 
@@ -56,6 +60,7 @@ class Abc extends \common\db\ActiveRecord
             'info' => 'Текст',
             'image' => 'Фото',
             'img' => 'Фото',
+            'open' => 'Показать',
         ];
     }
 

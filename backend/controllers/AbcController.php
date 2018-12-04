@@ -163,7 +163,6 @@ class AbcController extends Controller
     {
         $model = Abc::find()
             ->andWhere(['id' => $id])
-            ->active()
             ->one();
 
         if ($model) {

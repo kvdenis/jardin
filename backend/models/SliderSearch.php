@@ -41,7 +41,7 @@ class SliderSearch extends Slider
      */
     public function search($params)
     {
-        $query = Slider::find()->active();
+        $query = Slider::find()->andWhere(['>', 'open', 0]);
 
         // add conditions that should always apply here
 
