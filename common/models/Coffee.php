@@ -71,7 +71,6 @@ class Coffee extends \common\db\ActiveRecord
             [['title', 'image', 'pack', 'shop1', 'shop2', 'shop3', 'shop4', 'shop5', 'shop6', 'shop7'], 'string', 'max' => 255],
 
             ['open', 'required'],
-            ['open', 'boolean'],
         ];
     }
 
