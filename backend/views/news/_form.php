@@ -45,6 +45,18 @@ use yii\widgets\ActiveForm;
         'dateFormat' => 'yyyy-MM-dd',
     ]) ?>
 
+    <div class="row">
+
+        <div class="col-lg-3">
+
+            <?= $form->field($model, 'open')->dropDownList([\common\models\News::STATUS_ACTIVE => 'Доступно', '2' => 'Закрыто'], [
+                'prompt' => '',
+            ]) ?>
+
+        </div>
+
+    </div>
+
     <div class="form-group">
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
     </div>

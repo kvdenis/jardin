@@ -14,7 +14,7 @@ class NewsQuery extends \yii\db\ActiveQuery
      */
     public function active() :NewsQuery
     {
-        return $this->andWhere(['open' => true]);
+        return $this->andWhere(['open' => News::STATUS_ACTIVE]);
     }
 
     /**

@@ -139,7 +139,6 @@ class NewsController extends Controller
     {
         $model = News::find()
             ->andWhere(['id' => $id])
-            ->active()
             ->one();
 
         if ($model) {

@@ -18,6 +18,8 @@ use yii\web\UploadedFile;
  */
 class News extends \common\db\ActiveRecord
 {
+    const STATUS_ACTIVE = 1;
+
     /** @var UploadedFile */
     public $img;
 
@@ -42,6 +44,8 @@ class News extends \common\db\ActiveRecord
 
             ['img', 'safe'],
             ['img', 'file', 'extensions'=>'jpg, gif, png'],
+
+            ['open', 'required'],
         ];
     }
 

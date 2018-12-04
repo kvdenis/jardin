@@ -41,7 +41,7 @@ class NewsSearch extends News
      */
     public function search($params)
     {
-        $query = News::find()->active();
+        $query = News::find()->andWhere(['>', 'open', 0]);
 
         // add conditions that should always apply here
 
